@@ -24,12 +24,18 @@
                         <td>
                             <a href="{{ route('admin.categories.show', $category) }}" class="btn btn-primary mr-2">View</a>
                             <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-warning mr-2">Edit</a>
-                            <a href="#" class="btn btn-danger mr-2">Delete</a>
+                            <form action="{{ route('admin.categories.destroy', $category) }}" method="post" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger mr-2" onclick="return confirm('Tem certeza que deseja apagar o registro?')">
+                                    Delete
+                                </a>
+                            </form>
                         </td>
                     </tr>
                 @empty
-                    <tr>
-                        <td colspan="3">No categories found</td>
+                    <tr class="text-center">
+                        <td colspan="4">No categories found</td>
                     </tr>
                 @endforelse
 
