@@ -9,7 +9,7 @@
         <form action="{{ route('admin.categories.store') }}" method="POST">
             @csrf
             @method('POST')
-            <x-category-form routeDestiny="{{ route('admin.categories.store') }}" method="POST" />
+            <x-category-form name="" description=""/>
         </form>
     </div>
 </x-app-layout>

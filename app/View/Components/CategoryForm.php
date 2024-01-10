@@ -8,12 +8,15 @@ use Illuminate\View\Component;
 
 class CategoryForm extends Component
 {
+    public string $name;
+    public string $description;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(string $name, string $description)
     {
-
+        $this->name = $name;
+        $this->description = $description;
     }
 
     /**

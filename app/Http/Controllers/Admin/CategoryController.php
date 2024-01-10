@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::select('id', 'name')->orderBy('id')->get();
+        $categories = Category::all();
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -48,9 +48,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(int $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.categories.edit', ['category' => $category]);
     }
 
     /**
@@ -58,7 +59,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->update([
+            'name' => $request->name,
+            'description' => $request->description
+        ]);
+        return redirect()->route('admin.categories.index');
     }
 
     /**

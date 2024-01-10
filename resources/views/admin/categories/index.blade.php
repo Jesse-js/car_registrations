@@ -11,6 +11,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Options</th>
                 </tr>
             </thead>
@@ -19,9 +20,10 @@
                     <tr>
                         <th scope="row">{{ $category->id }}</th>
                         <td>{{ $category->name }}</td>
+                        <td>{{ $category->description }}</td>
                         <td>
                             <a href="#" class="btn btn-primary mr-2">View</a>
-                            <a href="#" class="btn btn-warning mr-2">Edit</a>
+                            <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-warning mr-2">Edit</a>
                             <a href="#" class="btn btn-danger mr-2">Delete</a>
                         </td>
                     </tr>
