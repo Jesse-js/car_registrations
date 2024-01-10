@@ -4,7 +4,7 @@
             {{ __('Categories') }}
         </h2>
     </x-slot>
-    <a href="{{ route('admin.categories.create') }}" class="btn btn-success">New</a>
+    <a href="{{ route('admin.categories.create') }}" class="btn btn-success ml-5">New</a>
     <div class="px-6">
         <table class="table table-striped table-hover mt-3">
             <thead>
