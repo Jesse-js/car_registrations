@@ -10,13 +10,15 @@ class CategoryForm extends Component
 {
     public string $name;
     public string $description;
+    public bool $readonly = false;
     /**
      * Create a new component instance.
      */
-    public function __construct(string $name, string $description)
+    public function __construct(string $name, string $description, bool $readonly = false)
     {
         $this->name = $name;
         $this->description = $description;
+        $this->readonly = $readonly;
     }
 
     /**

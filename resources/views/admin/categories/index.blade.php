@@ -22,7 +22,7 @@
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->description }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary mr-2">View</a>
+                            <a href="{{ route('admin.categories.show', $category) }}" class="btn btn-primary mr-2">View</a>
                             <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-warning mr-2">Edit</a>
                             <a href="#" class="btn btn-danger mr-2">Delete</a>
                         </td>
