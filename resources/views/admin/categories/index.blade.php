@@ -4,35 +4,34 @@
             {{ __('Categories') }}
         </h2>
     </x-slot>
-    <div>
-        <table class="table table-striped table-hover">
+    <a href="{{ route('admin.categories.create') }}" class="btn btn-success">New</a>
+    <div class="px-6">
+        <table class="table table-striped table-hover mt-3">
             <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Options</th>
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+                @forelse($categories as $category)
+                    <tr>
+                        <th scope="row">{{ $category->id }}</th>
+                        <td>{{ $category->name }}</td>
+                        <td>
+                            <a href="#" class="btn btn-primary mr-2">View</a>
+                            <a href="#" class="btn btn-warning mr-2">Edit</a>
+                            <a href="#" class="btn btn-danger mr-2">Delete</a>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="3">No categories found</td>
+                    </tr>
+                @endforelse
+
             </tbody>
-          </table>
+        </table>
     </div>
 </x-app-layout>
