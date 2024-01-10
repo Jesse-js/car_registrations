@@ -19,6 +19,10 @@
                     <x-nav-link :href="route('admin.cars.index')" :active="request()->routeIs('dashboard')">
                         {{ __('Cars') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('Categories') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -77,6 +81,10 @@
 
             <x-responsive-nav-link :href="route('admin.cars.index')" :active="request()->routeIs('dashboard')">
                 {{ __('Cars') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('dashboard')">
+                {{ __('Categories') }}
             </x-responsive-nav-link>
         </div>
 
