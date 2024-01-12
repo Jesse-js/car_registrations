@@ -23,6 +23,10 @@
                     <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('dashboard')">
                         {{ __('Categories') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('admin.brands.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('Brands') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -85,6 +89,10 @@
 
             <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('dashboard')">
                 {{ __('Categories') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.brands.index')" :active="request()->routeIs('dashboard')">
+                {{ __('Brands') }}
             </x-responsive-nav-link>
         </div>
 

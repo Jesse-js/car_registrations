@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\BrandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +33,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/dashboard', DashboardController::class)->name('dashboard');
         Route::resource('cars', CarController::class);
         Route::resource('categories', CategoryController::class);
+        Route::resource('brands', BrandController::class);
     });
 
 Route::middleware('auth')->group(function () {
